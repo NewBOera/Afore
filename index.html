@@ -124,13 +124,15 @@
                               </option>
                            </select>
                         </div>
-                        <a onclick="dynamicForm()" href="#form-section"
+                        <a
+                           onclick="dynamicForm()"
+                           href="#form-section"
                            type="submit"
                            id="btn-vamos"
                            class="p-2 rounded-md text-white w-[50%] bg-[#5FA72C] md:font-normal md:text-xs md:w-[35%] lg:text-2xl"
                         >
                            ¡VAMOS!
-                     </a>
+                        </a>
                      </form>
                   </div>
 
@@ -461,8 +463,7 @@
                         <span class="font-bold">Nuestros socios:</span>
                         <br />
 
-                        Instituto Mexicano del Seguro Social (IMSS) y Grupo
-                        Financiero Banorte
+                        Instituto Mexicano del Seguro Social (IMSS)
                      </p>
                   </div>
                   <!-- * CARD -->
@@ -625,7 +626,8 @@
                </h3>
 
                <div class="bg-blue-100 w-[95%] lg:w-[55%]">
-                  <form id="afore-form"
+                  <form
+                     id="afore-form"
                      action=""
                      class="flex flex-col bg-white shadow-xl [&>input]:border [&>input]:shadow-sm [&>input]:rounded-sm [&>input]:p-1 border p-4 gap-1"
                   >
@@ -685,12 +687,15 @@
                      >
                         <option value="wants">Aún no tengo Afore</option>
                         <option value="dont-want">Ya tengo Afore</option>
-                        <option value="dont-know">No sé en que Afore estoy</option>
+                        <option value="dont-know">
+                           No sé en que Afore estoy
+                        </option>
                         <option value="want-help">
                            Quiero que un asesor me contacte
                         </option>
                      </select>
-                     <button onclick="sendSubscribeForm('afore-form')"
+                     <button
+                        onclick="sendSubscribeForm('afore-form')"
                         type="submit"
                         class="bg-[#CCCCCC] border shadow-sm rounded-sm font-medium text-sm p-1 w-full md:w-[40%] self-center"
                      >
@@ -709,9 +714,11 @@
       </main>
       <!--?FOOTER-->
       <footer
-         class="bg-[#5FA72C] flex flex-col items-center text-justify p-4 gap-3 "
+         class="bg-[#5FA72C] flex flex-col items-center text-justify p-4 gap-3"
       >
-         <div class="flex flex-col items-center md:w-[85%] lg:w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:[1280px] 2xl:w-[1400px]">
+         <div
+            class="flex flex-col items-center md:w-[85%] lg:w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:[1280px] 2xl:w-[1400px]"
+         >
             <img
                src="images/logo.png"
                class="w-[190px] md:w-[300px] my-5"
@@ -765,92 +772,107 @@
       <!-- ! Modals -->
       <!-- ? Terms and Conditions Modal -->
       <section
-      id="terms-modal"
-      class="bg-[#00000088] font-Montserrat flex items-center justify-center min-h-screen absolute z-50 hidden"
-   >
-      <div
-         class="fixed inset-0 w-full bg-[#00000088] flex items-center justify-center max-h-screen"
+         id="terms-modal"
+         class="bg-[#00000088] font-Montserrat flex items-center justify-center min-h-screen absolute z-50 hidden"
       >
          <div
-            class="bg-white shadow-lg w-11/12 sm:w-8/12 lg:max-w-[600px] h-auto max-h-[70vh] rounded-md overflow-y-auto"
+            class="fixed inset-0 w-full bg-[#00000088] flex items-center justify-center max-h-screen"
          >
-            <div class="relative flex items-end">
-               <img
-                  class="hover:cursor-pointer absolute top-0 right-0 w-7 m-4 rounded-xs"
-                  onclick="clickModal('terms-modal')"
-                  src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSIjRUZFRkVGIiBkPSJNMTkgM0g1YTIgMiAwIDAgMC0yIDJ2MTRhMiAyIDAgMCAwIDIgMmgxNGEyIDIgMCAwIDAgMi0yVjVhMiAyIDAgMCAwLTItMm0tMy40IDE0TDEyIDEzLjRMOC40IDE3TDcgMTUuNmwzLjYtMy42TDcgOC40TDguNCA3bDMuNiAzLjZMMTUuNiA3TDE3IDguNEwxMy40IDEybDMuNiAzLjZ6Ii8+PC9zdmc+"
-                  alt=""
-               />
-               <div
-                  class="bg-primarybg w-full flex flex-col items-center gap-6 p-5"
-               >
-                  <h2 class="font-bold text-3xl text-center">
-                     <span class="text-[#5FA72C]">TÉRMINOS </span>
-                   Y CONDICIONES
-                  </h2>
+            <div
+               class="bg-white shadow-lg w-11/12 sm:w-8/12 lg:max-w-[600px] h-auto max-h-[70vh] rounded-md overflow-y-auto"
+            >
+               <div class="relative flex items-end">
+                  <img
+                     class="hover:cursor-pointer absolute top-0 right-0 w-7 m-4 rounded-xs"
+                     onclick="clickModal('terms-modal')"
+                     src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSIjRUZFRkVGIiBkPSJNMTkgM0g1YTIgMiAwIDAgMC0yIDJ2MTRhMiAyIDAgMCAwIDIgMmgxNGEyIDIgMCAwIDAgMi0yVjVhMiAyIDAgMCAwLTItMm0tMy40IDE0TDEyIDEzLjRMOC40IDE3TDcgMTUuNmwzLjYtMy42TDcgOC40TDguNCA3bDMuNiAzLjZMMTUuNiA3TDE3IDguNEwxMy40IDEybDMuNiAzLjZ6Ii8+PC9zdmc+"
+                     alt=""
+                  />
+                  <div
+                     class="bg-primarybg w-full flex flex-col items-center gap-6 p-5"
+                  >
+                     <h2 class="font-bold text-3xl text-center">
+                        <span class="text-[#5FA72C]">TÉRMINOS </span>
+                        Y CONDICIONES
+                     </h2>
 
-                  <div class="flex flex-col items-center">
-                     <h3 class="font-bold">Introducción</h3>
-                     <p
-                        class="text-[#6C6C6C] text-base text-center w-[60%] mb-5"
-                     >
-                     Bienvenido a <span class="dyn-name"></span>. Al acceder y utilizar nuestros servicios, aceptas estos
-                     Términos y Condiciones de Uso. Si no estás de acuerdo con alguno de estos términos, no
-                     deberías utilizar nuestros servicios.
-                     </p>
-                     <h3 class="font-bold">Uso de los Servicios</h3>
-                     <p
-                        class="text-[#6C6C6C] text-base text-center w-[60%] mb-5"
-                     >
-                     Nuestros servicios están diseñados para conectar a los usuarios con las mejores opciones
-                     de Afore en el mercado, proporcionando información detallada y actualizada para facilitar la
-                     toma de decisiones informadas. Te comprometes a utilizar nuestros servicios de manera
-                     responsable y conforme a la ley, respetando las normativas financieras y legales aplicables.
-                     </p>
-                     <h3 class="font-bold">Propiedad Intelectual</h3>
-                     <p
-                        class="text-[#6C6C6C] text-base text-center w-[60%] mb-5"
-                     >
-                     Todos los contenidos y materiales disponibles en nuestros servicios, incluyendo textos,
-                     gráficos, logotipos e imágenes, son propiedad de <span class="dyn-name"></span> o sus licenciantes
-                     y están protegidos por las leyes de propiedad intelectual. No puedes utilizar, reproducir ni
-                     distribuir ningún material sin nuestro permiso expreso.
-                     </p>
-                     <h3 class="font-bold">Modificaciones</h3>
-                     <p
-                        class="text-[#6C6C6C] text-base text-center w-[60%] mb-5"
-                     >
-                     Nos reservamos el derecho de modificar estos Términos y Condiciones de Uso en cualquier
-                     momento. Las modificaciones serán efectivas una vez publicadas en nuestro sitio web. Es
-                     tu responsabilidad revisar estos términos periódicamente para estar informado de cualquier
-                     cambio.
-                     </p>
-                     <h3 class="font-bold">Limitación de Responsabilidad</h3>
-                     <p
-                        class="text-[#6C6C6C] text-base text-center w-[60%] mb-5"
-                     >
-                     <span class="dyn-name"></span> no será responsable por cualquier daño directo, indirecto, incidental,
-                     especial o consecuente que resulte del uso o la imposibilidad de uso de nuestros servicios.
-                     No garantizamos la exactitud, integridad o actualidad de la información proporcionada.
-                     </p>
-                     <h3 class="font-bold">Contacto</h3>
-                     <p
-                        class="text-[#6C6C6C] text-base text-center w-[60%] mb-5"
-                     >
-                     Si tienes alguna pregunta sobre estos Términos y Condiciones de Uso, por favor
-                     contáctanos a través del formulario en la página.
-                     </p>
+                     <div class="flex flex-col items-center">
+                        <h3 class="font-bold">Introducción</h3>
+                        <p
+                           class="text-[#6C6C6C] text-base text-center w-[60%] mb-5"
+                        >
+                           Bienvenido a <span class="dyn-name"></span>. Al
+                           acceder y utilizar nuestros servicios, aceptas estos
+                           Términos y Condiciones de Uso. Si no estás de acuerdo
+                           con alguno de estos términos, no deberías utilizar
+                           nuestros servicios.
+                        </p>
+                        <h3 class="font-bold">Uso de los Servicios</h3>
+                        <p
+                           class="text-[#6C6C6C] text-base text-center w-[60%] mb-5"
+                        >
+                           Nuestros servicios están diseñados para conectar a
+                           los usuarios con las mejores opciones de Afore en el
+                           mercado, proporcionando información detallada y
+                           actualizada para facilitar la toma de decisiones
+                           informadas. Te comprometes a utilizar nuestros
+                           servicios de manera responsable y conforme a la ley,
+                           respetando las normativas financieras y legales
+                           aplicables.
+                        </p>
+                        <h3 class="font-bold">Propiedad Intelectual</h3>
+                        <p
+                           class="text-[#6C6C6C] text-base text-center w-[60%] mb-5"
+                        >
+                           Todos los contenidos y materiales disponibles en
+                           nuestros servicios, incluyendo textos, gráficos,
+                           logotipos e imágenes, son propiedad de
+                           <span class="dyn-name"></span> o sus licenciantes y
+                           están protegidos por las leyes de propiedad
+                           intelectual. No puedes utilizar, reproducir ni
+                           distribuir ningún material sin nuestro permiso
+                           expreso.
+                        </p>
+                        <h3 class="font-bold">Modificaciones</h3>
+                        <p
+                           class="text-[#6C6C6C] text-base text-center w-[60%] mb-5"
+                        >
+                           Nos reservamos el derecho de modificar estos Términos
+                           y Condiciones de Uso en cualquier momento. Las
+                           modificaciones serán efectivas una vez publicadas en
+                           nuestro sitio web. Es tu responsabilidad revisar
+                           estos términos periódicamente para estar informado de
+                           cualquier cambio.
+                        </p>
+                        <h3 class="font-bold">Limitación de Responsabilidad</h3>
+                        <p
+                           class="text-[#6C6C6C] text-base text-center w-[60%] mb-5"
+                        >
+                           <span class="dyn-name"></span> no será responsable
+                           por cualquier daño directo, indirecto, incidental,
+                           especial o consecuente que resulte del uso o la
+                           imposibilidad de uso de nuestros servicios. No
+                           garantizamos la exactitud, integridad o actualidad de
+                           la información proporcionada.
+                        </p>
+                        <h3 class="font-bold">Contacto</h3>
+                        <p
+                           class="text-[#6C6C6C] text-base text-center w-[60%] mb-5"
+                        >
+                           Si tienes alguna pregunta sobre estos Términos y
+                           Condiciones de Uso, por favor contáctanos a través
+                           del formulario en la página.
+                        </p>
+                     </div>
                   </div>
                </div>
-            </div>
 
-            <article
-               class="overflow-y-auto overflow-x-hidden h-96 p-5 text-xs flex flex-col gap-4"
-            ></article>
+               <article
+                  class="overflow-y-auto overflow-x-hidden h-96 p-5 text-xs flex flex-col gap-4"
+               ></article>
+            </div>
          </div>
-      </div>
-   </section>
-  
+      </section>
 
       <!-- ? Privacy Policy Modal -->
       <section
@@ -980,30 +1002,36 @@
                   <div
                      class="bg-primarybg w-full flex flex-col items-center gap-6 p-5"
                   >
-                     <h2 class="font-bold text-3xl text-center">
-                        NOSOTROS</span>
-                     </h2>
+                     <h2 class="font-bold text-3xl text-center">NOSOTROS</h2>
 
                      <div class="flex flex-col items-center">
-                        
                         <p
                            class="text-[#6C6C6C] text-base text-center w-[60%] mb-5"
                         >
-                        <span class="font-bold dyn-name"></span> es operado por una agencia de publicidad dedicada a promover y
-                        conectar a los usuarios con las mejores opciones de Afore en México. Nuestra misión es
-                        generar leads de calidad que permitan a nuestros clientes tomar decisiones informadas
-                        sobre sus ahorros y planes de retiro. <br> <br>
+                           <span class="font-bold dyn-name"></span> es operado
+                           por una agencia de publicidad dedicada a promover y
+                           conectar a los usuarios con las mejores opciones de
+                           Afore en México. Nuestra misión es generar leads de
+                           calidad que permitan a nuestros clientes tomar
+                           decisiones informadas sobre sus ahorros y planes de
+                           retiro. <br />
+                           <br />
 
-                        Trabajamos estrechamente con instituciones financieras, asesores de Afore y expertos del
-                        sector para asegurar que nuestros usuarios reciban la información más precisa y
-                        actualizada. Utilizamos tecnología avanzada y estrategias de marketing efectivas para
-                        alcanzar a nuestro público objetivo y proporcionar una experiencia de usuario óptima. <br> <br> Nos comprometemos a ofrecer una plataforma confiable y accesible, adaptada a las
-                        necesidades de nuestros clientes, garantizando transparencia, seguridad y soporte
-                        continuo. Tu futuro financiero es nuestra prioridad, y estamos aquí para ayudarte a
-                        asegurarlo.
-
+                           Trabajamos estrechamente con instituciones
+                           financieras, asesores de Afore y expertos del sector
+                           para asegurar que nuestros usuarios reciban la
+                           información más precisa y actualizada. Utilizamos
+                           tecnología avanzada y estrategias de marketing
+                           efectivas para alcanzar a nuestro público objetivo y
+                           proporcionar una experiencia de usuario óptima.
+                           <br />
+                           <br />
+                           Nos comprometemos a ofrecer una plataforma confiable
+                           y accesible, adaptada a las necesidades de nuestros
+                           clientes, garantizando transparencia, seguridad y
+                           soporte continuo. Tu futuro financiero es nuestra
+                           prioridad, y estamos aquí para ayudarte a asegurarlo.
                         </p>
-                        
                      </div>
                   </div>
                </div>
