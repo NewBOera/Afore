@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+      <!-- ! Tailwind config -->
+      <script src="https://cdn.tailwindcss.com"></script>
+      <script>
+         tailwind.config = {
+            theme: {
+               extend: {
+                  colors: {},
+               },
+               fontFamily: {
+                  Montserrat: ["Montserrat", "sans-serif"],
+                  Inter: ["Inter", "sans-serif"],
+               },
+            },
+         };
+      </script>
+      <script defer src="./scripts/main.js"></script>
+      <script defer src="./scripts/form-secure.js"></script>
+      <script defer src="./scripts/notify.js"></script>
+      <script defer src="./scripts/navbar.js"></script>
+      <script defer src="./scripts/dynamic-domain.js"></script>
+      <script defer src="./scripts/modals.js"></script>
+      <script defer src="scripts/flag.js"></script>
+      <script defer src="scripts/dynamic-section.js"></script>
+      <script defer src="scripts/form_logic.js"></script>
+
+      <link rel="stylesheet" href="styles/notify.css" />
+      <link rel="stylesheet" href="styles/globals.css" />
+      <link rel="stylesheet" href="./styles/navbar.css" />
+
+      <!-- ? Google Fonts -->
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+         rel="stylesheet"
+      />
+
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+         rel="stylesheet"
+      />
+      <link rel="stylesheet" href="styles/flag.css" />
+      <!-- ? Styles-->
+      <style>
+         .custom-bg {
+            background-image: url("/images/hero_bg.png");
+            background-size: cover;
+            background-position: center;
+         }
+
+         .nuestro-bg {
+            background-image: url("/images/bg_short_2.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+         }
+      </style>
+   </head>
+   <body class="font-Montserrat">
+      <main class="">
+         <!-- ? Hero section -->
+         <section
+            id="home-section"
+            class="flex justify-center custom-bg h-[500px] md:h-[360px] lg:h-[700px] overflow-x-hidden"
+         >
+            <div
+               class="flex flex-col sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:[1280px] 2xl:w-[1400px] relative"
+            >
+               <h2
+                  class="hidden lg:block font-Inter font-bold text-white text-3xl absolute top-0 left-0 right-0 text-center"
+               >
+                  ANUNCIO PATROCINADO
+               </h2>
+
+               <div class="pt-10 flex flex-col items-center gap-5">
+                  <img
+                     src="images/logo.png"
+                     class="max-w-[195px] self-start"
+                     alt="Afore-logo"
+                  />
+                  <div class="md:w-[55%]">
+                     <h1
+                        class="text-white text-xl text-center font-bold md:text-[42px]/[42px] md:font-medium lg:text-6xl lg:font-semibold"
+                     >
+                        ¿CÓMO REGISTRARME EN AFORE XXI?
+                     </h1>
+                  </div>
+
+                  <div class="md:w-[45%] lg:w-[55%] text-center">
+                     <form
+                        action=""
+                        class="flex flex-col items-center gap-2 lg:gap-5 font-semibold"
+                     >
+                        <div
+                           class="lg:flex items-center lg:justify-center lg:mt-2 2xl:w-full"
+                        >
+                           <label
+                              for="select"
+                              class="text-white text-xl text-center lg:w-[50%] 2xl:font-light 2xl:text-4xl"
+                              >Elige una opción:</label
+                           >
+                           <select
+                              name="select"
+                              class="w-[80%] md:w-full lg:w-[50%] lg:font-light 2xl:text-3xl"
+                              id="select"
+                           >
+                              <option value="no_afore">
+                                 Aún no tengo afore
+                              </option>
+                              <option value="yes_afore">Ya tengo afore</option>
+                              <option value="dont_know_afore">
+                                 No sé en que afore estoy
+                              </option>
+                              <option value="want_advisor">
+                                 Quiero que un asesor me contacte
+                              </option>
+                           </select>
+                        </div>
+                        <a onclick="dynamicForm()" href="#form-section"
+                           type="submit"
+                           id="btn-vamos"
+                           class="p-2 rounded-md text-white w-[50%] bg-[#5FA72C] md:font-normal md:text-xs md:w-[35%] lg:text-2xl"
+                        >
+                           ¡VAMOS!
+                     </a>
+                     </form>
+                  </div>
+
+                  <img
+                     src="images/hero_woman.png"
+                     class="absolute bottom-0 -right-12 w-[200px] max-w-[400px] lg:w-[400px]"
+                     alt=""
+                  />
+                  <img
+                     src="images/hero_man.png"
+                     class="absolute bottom-0 -left-12 w-[223px] max-w-[400px] lg:w-[450px] lg:max-w-[600px]"
+                     alt=""
+                  />
+               </div>
+            </div>
+         </section>
+
+         <!-- TODO-CONTENT section -->
+         <section
+            id="home-section"
+            class="flex justify-center items-center pt-16 pb-16"
+         >
+            <div
+               class="flex flex-col items-center sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:[1280px] 2xl:w-[1400px]"
+            >
+               <!--?AFORE-->
+               <div
+                  id="yes_afore"
+                  class="afore flex flex-col items-center gap-5 p-7 md:w-[80%] lg:hidden"
+               >
+                  <h2 class="font-bold text-2xl text-center">
+                     <span class="text-[#5FA72C]">YA TENGO</span> AFORE
+                  </h2>
+
+                  <img src="images/icon_approved.png" class="w-[60px]
+                  md:-order-1 lg md:w-[150px] alt="" />
+                  <p class="text-sm text-center text-[#6C6C6C] md:text-base">
+                     Si otra Afore administra los recursos para tu retiro y
+                     deseas registrarte en Afore XXI, realiza tu traspaso hoy y
+                     obtén acceso a los mejores servicios, rendimientos y
+                     beneficios para tu futuro.
+                  </p>
+
+                  <a
+                     href="#form-section"
+                     class="p-2 rounded-md text-white bg-[#5FA72C] text-base md:font-normal md:text-sm md:w-[35%] text-center"
+                  >
+                     REGISTRATE CON NOSOTROS
+                  </a>
+               </div>
+               <!--?AFORE LG-->
+               <div
+                  id="yes_afore_lg"
+                  class="aforelg hidden lg:flex flex-col items-center gap-5 p-7 w-[80%]"
+               >
+                  <h2 class="font-bold text-4xl">
+                     <span class="text-[#5FA72C]">YA TENGO</span> AFORE
+                  </h2>
+
+                  <div class="flex items-center gap-10">
+                     <img src="images/icon_approved.png" class="w-[150px] alt=""
+                     />
+                     <p class="text-xl font-medium text-left text-[#6C6C6C]">
+                        Si otra Afore administra los recursos para tu retiro y
+                        deseas registrarte en Afore XXI, realiza tu traspaso hoy
+                        y obtén acceso a los mejores servicios, rendimientos y
+                        beneficios para tu futuro.
+                     </p>
+                  </div>
+
+                  <a
+                     href="#form-section"
+                     class="p-2 rounded-md text-white bg-[#5FA72C] text-2xl w-[50%] text-center"
+                  >
+                     REGISTRATE CON NOSOTROS
+                  </a>
+               </div>
+
+               <!--?AFORE-->
+               <div
+                  id="no_afore"
+                  class="afore flex flex-col items-center gap-5 p-7 md:w-[80%] lg:hidden"
+               >
+                  <h2 class="font-bold text-2xl text-center">
+                     <span class="text-[#5FA72C]">AÚN NO TENGO</span> AFORE
+                  </h2>
+
+                  <img src="images/icon_approved.png" class="w-[60px]
+                  md:-order-1 lg md:w-[150px] alt="" />
+                  <p class="text-sm text-center text-[#6C6C6C] md:text-base">
+                     Si aún no eliges Afore o si no cotizas en ningún instituto
+                     de seguridad social como el IMSS o el ISSSTE, te invitamos
+                     a registrarte con nosotros. ¡Tu futuro es hoy!
+                  </p>
+
+                  <a
+                     href="#form-section"
+                     class="p-2 rounded-md text-white bg-[#5FA72C] text-base md:font-normal md:text-sm md:w-[35%] text-center"
+                  >
+                     REGISTRATE CON NOSOTROS
+                  </a>
+               </div>
+               <!--?AFORE LG-->
+               <div
+                  id="no_afore_lg"
+                  class="aforelg hidden lg:flex flex-col items-center gap-5 p-7 w-[80%]"
+               >
+                  <h2 class="font-bold text-4xl">
+                     <span class="text-[#5FA72C]">AÚN NO TENGO</span> AFORE
+                  </h2>
+
+                  <div class="flex items-center gap-10">
+                     <img src="images/icon_approved-1.png" class="w-[150px]
+                     alt="" />
+                     <p class="text-xl font-medium text-left text-[#6C6C6C]">
+                        Si aún no eliges Afore o si no cotizas en ningún
+                        instituto de seguridad social como el IMSS o el ISSSTE,
+                        te invitamos a registrarte con nosotros. ¡Tu futuro es
+                        hoy!
+                     </p>
+                  </div>
+
+                  <a
+                     href="#form-section"
+                     class="p-2 rounded-md text-white bg-[#5FA72C] text-2xl w-[50%] text-center"
+                  >
+                     REGISTRATE CON NOSOTROS
+                  </a>
+               </div>
+
+               <!--?AFORE-->
+
+               <div
+                  id="dont_know_afore"
+                  class="afore flex flex-col items-center gap-5 p-7 md:w-[80%] lg:hidden"
+               >
+                  <h2 class="font-bold text-2xl text-center">
+                     <span class="text-[#5FA72C]">NO SÉ EN CUAL</span> AFORE
+                     ESTOY
+                  </h2>
+
+                  <img src="images/icon_question.png" class="w-[60px]
+                  md:-order-1 lg md:w-[150px] alt="" />
+                  <p class="text-sm text-center text-[#6C6C6C] md:text-base">
+                     Saber en cuál Afore te encuentras es importante para que
+                     obtengas los mejores beneficios para tu futuro. Nosotros te
+                     ayudamos a rastrear tu administradora, solo necesitas tener
+                     a la mano tu Número de Seguridad Social (NSS) y Clave Única
+                     de Registro de Población (CURP).
+                  </p>
+
+                  <a
+                     href="#form-section"
+                     class="p-2 rounded-md text-white bg-[#5FA72C] text-base md:font-normal md:text-sm md:w-[35%] text-center"
+                  >
+                     REGISTRATE CON NOSOTROS
+                  </a>
+               </div>
+               <!--?AFORE LG-->
+               <div
+                  id="dont_know_afore_lg"
+                  class="aforelg hidden lg:flex flex-col items-center gap-5 p-7 w-[80%]"
+               >
+                  <h2 class="font-bold text-4xl">
+                     <span class="text-[#5FA72C]">NO SÉ EN CUAL </span> AFORE
+                     ESTOY
+                  </h2>
+
+                  <div class="flex items-center gap-10">
+                     <img src="images/icon_question.png" class="w-[150px] alt=""
+                     />
+                     <p class="text-xl font-medium text-left text-[#6C6C6C]">
+                        Saber en cuál Afore te encuentras es importante para que
+                        obtengas los mejores beneficios para tu futuro. Nosotros
+                        te ayudamos a rastrear tu administradora, solo necesitas
+                        tener a la mano tu Número de Seguridad Social (NSS) y
+                        Clave Única de Registro de Población (CURP).
+                     </p>
+                  </div>
+
+                  <a
+                     href="#form-section"
+                     class="p-2 rounded-md text-white bg-[#5FA72C] text-2xl w-[50%] text-center"
+                  >
+                     REGISTRATE CON NOSOTROS
+                  </a>
+               </div>
+
+               <!--?AFORE-->
+               <div
+                  id="want_advisor"
+                  class="afore flex flex-col items-center gap-5 p-7 md:w-[80%] lg:hidden"
+               >
+                  <h2 class="font-bold text-2xl text-center">
+                     <span class="text-[#5FA72C]">QUIERO QUE UN ASESOR</span> ME
+                     CONTACTE
+                  </h2>
+
+                  <img src="images/icon_agent.png" class="w-[60px] md:-order-1
+                  lg md:w-[150px] alt="" />
+                  <p class="text-sm text-center text-[#6C6C6C] md:text-base">
+                     ¿Tienes preguntas sobre cómo maximizar tus ahorros para el
+                     retiro? Nuestros asesores expertos están listos para
+                     ayudarte con información detallada y soluciones
+                     personalizadas. Solicita una consulta y obtén asesoramiento
+                     individualizado para tomar las mejores decisiones
+                     financieras, adaptadas a tus necesidades y objetivos.
+                  </p>
+
+                  <a
+                     href="#form-section"
+                     class="p-2 rounded-md text-white bg-[#5FA72C] text-base md:font-normal md:text-sm md:w-[35%] text-center"
+                  >
+                     REGISTRATE CON NOSOTROS
+                  </a>
+               </div>
+               <!--?AFORE LG-->
+               <div
+                  id="want_advisor_lg"
+                  class="aforelg hidden lg:flex flex-col items-center gap-5 p-7 w-[80%] mb-10"
+               >
+                  <h2 class="font-bold text-4xl">
+                     <span class="text-[#5FA72C]">QUIERO QUE UN ASESOR </span>
+                     ME CONTACTE
+                  </h2>
+
+                  <div class="flex items-center gap-10">
+                     <img src="images/icon_agent.png" class="w-[150px] alt="" />
+                     <p class="text-xl font-medium text-left text-[#6C6C6C]">
+                        ¿Tienes preguntas sobre cómo maximizar tus ahorros para
+                        el retiro? Nuestros asesores expertos están listos para
+                        ayudarte con información detallada y soluciones
+                        personalizadas. Solicita una consulta y obtén
+                        asesoramiento individualizado para tomar las mejores
+                        decisiones financieras, adaptadas a tus necesidades y
+                        objetivos.
+                     </p>
+                  </div>
+
+                  <a
+                     href="#form-section"
+                     class="p-2 rounded-md text-white bg-[#5FA72C] text-2xl w-[50%] text-center"
+                  >
+                     REGISTRATE CON NOSOTROS
+                  </a>
+               </div>
+            </div>
+         </section>
+
+         <!-- TODO FONDOS/ NUESTRA PROMESA -->
+         <section
+            id="home-section"
+            class="flex flex-col items-center justify-center bg-[#f3f3f2]"
+         >
+            <svg
+               id="wave"
+               style="transform: rotate(180deg); transition: 0.3s"
+               viewBox="0 0 1440 130"
+               version="1.1"
+               xmlns="http://www.w3.org/2000/svg"
+            >
+               <defs>
+                  <linearGradient
+                     id="sw-gradient-0"
+                     x1="0"
+                     x2="0"
+                     y1="1"
+                     y2="0"
+                  >
+                     <stop
+                        stop-color="rgba(255, 255, 255, 1)"
+                        offset="0%"
+                     ></stop>
+                     <stop
+                        stop-color="rgba(255, 255, 255, 1)"
+                        offset="100%"
+                     ></stop>
+                  </linearGradient>
+               </defs>
+               <path
+                  style="transform: translate(0, 0px); opacity: 1"
+                  fill="url(#sw-gradient-0)"
+                  d="M0,52L60,60.7C120,69,240,87,360,84.5C480,82,600,61,720,52C840,43,960,48,1080,58.5C1200,69,1320,87,1440,82.3C1560,78,1680,52,1800,39C1920,26,2040,26,2160,28.2C2280,30,2400,35,2520,41.2C2640,48,2760,56,2880,49.8C3000,43,3120,22,3240,21.7C3360,22,3480,43,3600,58.5C3720,74,3840,82,3960,86.7C4080,91,4200,91,4320,82.3C4440,74,4560,56,4680,45.5C4800,35,4920,30,5040,30.3C5160,30,5280,35,5400,32.5C5520,30,5640,22,5760,26C5880,30,6000,48,6120,65C6240,82,6360,100,6480,91C6600,82,6720,48,6840,30.3C6960,13,7080,13,7200,23.8C7320,35,7440,56,7560,54.2C7680,52,7800,26,7920,17.3C8040,9,8160,17,8280,26C8400,35,8520,43,8580,47.7L8640,52L8640,130L8580,130C8520,130,8400,130,8280,130C8160,130,8040,130,7920,130C7800,130,7680,130,7560,130C7440,130,7320,130,7200,130C7080,130,6960,130,6840,130C6720,130,6600,130,6480,130C6360,130,6240,130,6120,130C6000,130,5880,130,5760,130C5640,130,5520,130,5400,130C5280,130,5160,130,5040,130C4920,130,4800,130,4680,130C4560,130,4440,130,4320,130C4200,130,4080,130,3960,130C3840,130,3720,130,3600,130C3480,130,3360,130,3240,130C3120,130,3000,130,2880,130C2760,130,2640,130,2520,130C2400,130,2280,130,2160,130C2040,130,1920,130,1800,130C1680,130,1560,130,1440,130C1320,130,1200,130,1080,130C960,130,840,130,720,130C600,130,480,130,360,130C240,130,120,130,60,130L0,130Z"
+               ></path>
+            </svg>
+            <div
+               class="flex flex-col items-center gap-5 sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:[1280px] 2xl:w-[1400px]"
+            >
+               <h2 class="font-semibold text-2xl text-center">
+                  <span class="text-[#5FA72C]">NUESTRA</span> PROMESA
+               </h2>
+
+               <article
+                  class="flex flex-col items-center gap-10 lg:flex-row lg:justify-center lg:gap-2 lg:flex-wrap lg:w-[1140px] lg:[&>div]:w-[300px]"
+               >
+                  <!-- * CARD -->
+                  <div class="flex flex-col items-center gap-10">
+                     <img src="images/mas.png" class="w-[100px]" alt="" />
+                     <p class="text-[#6C6C6C] text-base text-center w-[60%]">
+                        Somos la afore que
+                        <span class="font-bold"
+                           >te acompaña durante toda la vida</span
+                        >
+                     </p>
+                  </div>
+
+                  <!-- * CARD -->
+                  <div class="flex flex-col items-center gap-10">
+                     <img src="images/coro.png" class="w-[100px]" alt="" />
+                     <p class="text-[#6C6C6C] text-base text-center w-[60%]">
+                        <span class="font-bold">Desde hace 23 años</span>
+                        trabajamos por el bienestar del futuro
+                     </p>
+                  </div>
+
+                  <!-- * CARD -->
+                  <div class="flex flex-col items-center gap-10">
+                     <img src="images/mex.png" class="w-[100px]" alt="" />
+                     <p class="text-[#6C6C6C] text-base text-center w-[60%]">
+                        Somos una
+                        <span class="font-bold">empresa 100% mexicana</span>
+                     </p>
+                  </div>
+                  <!-- * CARD -->
+                  <div class="flex flex-col items-center gap-10">
+                     <img src="images/manos.png" class="w-[100px]" alt="" />
+                     <p class="text-[#6C6C6C] text-base text-center w-[60%]">
+                        <span class="font-bold">Nuestros socios:</span>
+                        <br />
+
+                        Instituto Mexicano del Seguro Social (IMSS) y Grupo
+                        Financiero Banorte
+                     </p>
+                  </div>
+                  <!-- * CARD -->
+                  <div class="flex flex-col items-center gap-10">
+                     <img src="images/graf.png" class="w-[100px]" alt="" />
+                     <p class="text-[#6C6C6C] text-base text-center w-[60%]">
+                        ¡Nuestra comisión para este 2024 es de solo
+                        <span class="font-bold">0.57%!</span>De este modo
+                        <span class="font-bold">maximizaremos </span> el ahorro
+                        para el retiro de nuestras y nuestros clientes.
+                     </p>
+                  </div>
+               </article>
+            </div>
+            <svg
+               id="wave"
+               style="transform: rotate(0deg); transition: 0.3s"
+               viewBox="0 0 1440 130"
+               version="1.1"
+               xmlns="http://www.w3.org/2000/svg"
+            >
+               <defs>
+                  <linearGradient
+                     id="sw-gradient-0"
+                     x1="0"
+                     x2="0"
+                     y1="1"
+                     y2="0"
+                  >
+                     <stop
+                        stop-color="rgba(255, 255, 255, 1)"
+                        offset="0%"
+                     ></stop>
+                     <stop
+                        stop-color="rgba(255, 255, 255, 1)"
+                        offset="100%"
+                     ></stop>
+                  </linearGradient>
+               </defs>
+               <path
+                  style="transform: translate(0, 0px); opacity: 1"
+                  fill="url(#sw-gradient-0)"
+                  d="M0,52L60,60.7C120,69,240,87,360,84.5C480,82,600,61,720,52C840,43,960,48,1080,58.5C1200,69,1320,87,1440,82.3C1560,78,1680,52,1800,39C1920,26,2040,26,2160,28.2C2280,30,2400,35,2520,41.2C2640,48,2760,56,2880,49.8C3000,43,3120,22,3240,21.7C3360,22,3480,43,3600,58.5C3720,74,3840,82,3960,86.7C4080,91,4200,91,4320,82.3C4440,74,4560,56,4680,45.5C4800,35,4920,30,5040,30.3C5160,30,5280,35,5400,32.5C5520,30,5640,22,5760,26C5880,30,6000,48,6120,65C6240,82,6360,100,6480,91C6600,82,6720,48,6840,30.3C6960,13,7080,13,7200,23.8C7320,35,7440,56,7560,54.2C7680,52,7800,26,7920,17.3C8040,9,8160,17,8280,26C8400,35,8520,43,8580,47.7L8640,52L8640,130L8580,130C8520,130,8400,130,8280,130C8160,130,8040,130,7920,130C7800,130,7680,130,7560,130C7440,130,7320,130,7200,130C7080,130,6960,130,6840,130C6720,130,6600,130,6480,130C6360,130,6240,130,6120,130C6000,130,5880,130,5760,130C5640,130,5520,130,5400,130C5280,130,5160,130,5040,130C4920,130,4800,130,4680,130C4560,130,4440,130,4320,130C4200,130,4080,130,3960,130C3840,130,3720,130,3600,130C3480,130,3360,130,3240,130C3120,130,3000,130,2880,130C2760,130,2640,130,2520,130C2400,130,2280,130,2160,130C2040,130,1920,130,1800,130C1680,130,1560,130,1440,130C1320,130,1200,130,1080,130C960,130,840,130,720,130C600,130,480,130,360,130C240,130,120,130,60,130L0,130Z"
+               ></path>
+            </svg>
+         </section>
+         <!--?SECCION ESTOS SON LOS CANALES/CIRCULOS-->
+         <section id="home-section" class="flex justify-center py-24">
+            <div
+               class="flex flex-col items-center px-7 gap-10 sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:[1280px] 2xl:w-[1400px]"
+            >
+               <h3
+                  class="font-semibold text-2xl/[30px] text-center md:text-2xl md:w-[75%] lg:w-[60%] lg:text-[32px]/[38px]"
+               >
+                  ESTOS
+                  <span class="text-[#5FA72C]">SON LOS CANALES</span> QUE AFORE
+                  XXI TE OFRECE PARA BRINDARTE ATENCIÓN
+               </h3>
+
+               <div class="flex flex-col items gap-10 lg:flex-row">
+                  <!--?CIRCULO  -->
+                  <div
+                     class="bg-[#5FA72C] w-[230px] h-[230px] rounded-[50%] md:w-[360px] md:h-[360px] lg:w-[350px] lg:h-[350px] flex flex-col items-center justify-center gap-4"
+                  >
+                     <img
+                        src="images/icon_click.png"
+                        class="w-[100px] md:w-[150px] lg:w-[130px]"
+                        alt=""
+                     />
+
+                     <p
+                        class="text-white font-normal text-xs w-[80%] text-center md:text-xl lg:text-2xl"
+                     >
+                        <span class="font-bold"> Amplia oferta</span> de
+                        servicios digitales
+                     </p>
+                  </div>
+
+                  <!--?CIRCULO  -->
+                  <div
+                     class="bg-[#5FA72C] w-[230px] h-[230px] rounded-[50%] md:w-[360px] md:h-[360px] lg:w-[350px] lg:h-[350px] flex flex-col items-center justify-center gap-4"
+                  >
+                     <img
+                        src="images/icon_attention.png"
+                        class="w-[100px] md:w-[150px] lg:w-[130px]"
+                        alt=""
+                     />
+
+                     <p
+                        class="text-white font-normal text-xs w-[80%] text-center md:text-xl lg:text-2xl"
+                     >
+                        <span class="font-bold"
+                           >Centro de Atención Telefónica</span
+                        >
+                        y redes sociales.
+                     </p>
+                  </div>
+               </div>
+
+               <div
+                  class="flex flex-col items-center md:w-[50%] text-[#6C6C6C] gap-5"
+               >
+                  <h2 class="font-bold text-lg">FUENTES</h2>
+                  <p class="text-sm md:text-sm text-center">
+                     Comisión anual vigente sobre saldo para 2024: <br />
+                     $5.70 por cada mil pesos. Los recursos en tu Cuenta
+                     Individual son tuyos. Infórmate en www.gob.mx/consar
+                  </p>
+               </div>
+            </div>
+         </section>
+
+         <!--?FORMULARIO-->
+         <section
+            class="flex flex-col items-center justify-center gap-5 px-4 pb-40 bg-[#f3f3f2]"
+         >
+            <svg
+               id="wave"
+               style="transform: rotate(180deg); transition: 0.3s"
+               viewBox="0 0 1440 140"
+               version="1.1"
+               xmlns="http://www.w3.org/2000/svg"
+            >
+               <defs>
+                  <linearGradient
+                     id="sw-gradient-0"
+                     x1="0"
+                     x2="0"
+                     y1="1"
+                     y2="0"
+                  >
+                     <stop
+                        stop-color="rgba(255, 255, 255, 1)"
+                        offset="0%"
+                     ></stop>
+                     <stop
+                        stop-color="rgba(255, 255, 255, 1)"
+                        offset="100%"
+                     ></stop>
+                  </linearGradient>
+               </defs>
+               <path
+                  style="transform: translate(0, 0px); opacity: 1"
+                  fill="url(#sw-gradient-0)"
+                  d="M0,14L24,11.7C48,9,96,5,144,23.3C192,42,240,84,288,91C336,98,384,70,432,65.3C480,61,528,79,576,79.3C624,79,672,61,720,51.3C768,42,816,42,864,39.7C912,37,960,33,1008,30.3C1056,28,1104,28,1152,35C1200,42,1248,56,1296,53.7C1344,51,1392,33,1440,30.3C1488,28,1536,42,1584,58.3C1632,75,1680,93,1728,95.7C1776,98,1824,84,1872,72.3C1920,61,1968,51,2016,56C2064,61,2112,79,2160,93.3C2208,107,2256,117,2304,114.3C2352,112,2400,98,2448,86.3C2496,75,2544,65,2592,53.7C2640,42,2688,28,2736,37.3C2784,47,2832,79,2880,98C2928,117,2976,121,3024,119C3072,117,3120,107,3168,102.7C3216,98,3264,98,3312,102.7C3360,107,3408,117,3432,121.3L3456,126L3456,140L3432,140C3408,140,3360,140,3312,140C3264,140,3216,140,3168,140C3120,140,3072,140,3024,140C2976,140,2928,140,2880,140C2832,140,2784,140,2736,140C2688,140,2640,140,2592,140C2544,140,2496,140,2448,140C2400,140,2352,140,2304,140C2256,140,2208,140,2160,140C2112,140,2064,140,2016,140C1968,140,1920,140,1872,140C1824,140,1776,140,1728,140C1680,140,1632,140,1584,140C1536,140,1488,140,1440,140C1392,140,1344,140,1296,140C1248,140,1200,140,1152,140C1104,140,1056,140,1008,140C960,140,912,140,864,140C816,140,768,140,720,140C672,140,624,140,576,140C528,140,480,140,432,140C384,140,336,140,288,140C240,140,192,140,144,140C96,140,48,140,24,140L0,140Z"
+               ></path>
+            </svg>
+            <div
+               class="flex flex-col items-center sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:[1280px] 2xl:w-[1400px] gap-5 md:gap-12"
+            >
+               <h3
+                  id="form-section"
+                  class="pt-10 font-semibold text-2xl/[30px] text-center md:text-2xl md:w-[55%] lg:text-[32px]/[38px]"
+               >
+                  QUIERO RECIBIR
+                  <span class="text-[#5FA72C]"
+                     >ATENCIÓN DE UN ASESOR DE AFORE XXI,</span
+                  >
+                  ESTOS SON MIS DATOS:
+               </h3>
+
+               <div class="bg-blue-100 w-[95%] lg:w-[55%]">
+                  <form id="afore-form"
+                     action=""
+                     class="flex flex-col bg-white shadow-xl [&>input]:border [&>input]:shadow-sm [&>input]:rounded-sm [&>input]:p-1 border p-4 gap-1"
+                  >
+                     <h2 class="font-semibold text-xl mb-5">Formulario</h2>
+                     <hr class="mb-5" />
+                     <label for="name" class="font-bold text-base"
+                        >NOMBRE<span class="text-red-600"> *</span></label
+                     >
+                     <input type="text" name="name" id="name" class="mb-5" />
+                     <label for="lastname" class="font-bold text-base"
+                        >APELLIDOS<span class="text-red-600"> *</span></label
+                     >
+                     <input type="text" name="lastname" id="lastname" />
+                     <h3 class="text-[#6F6F6F] font-normal text-xs">Paterno</h3>
+                     <input type="text" name="lastname2" id="lastname2" />
+                     <h3 class="text-[#6F6F6F] font-normal text-xs mb-5">
+                        Materno
+                     </h3>
+                     <label for="email" class="font-bold text-base"
+                        >CORREO<span class="text-red-600"> *</span></label
+                     >
+                     <input type="email" name="email" id="email" />
+                     <h3 class="text-[#6F6F6F] font-normal text-xs">
+                        ejemplo@ejemplo.com
+                     </h3>
+                     <label for="phone" class="font-bold text-base"
+                        >TÉLEFONO<span class="text-red-600"> *</span></label
+                     >
+                     <div class="input-with-icon">
+                        <img
+                           id="country-flag"
+                           src=""
+                           class="icon"
+                           alt="phone icon"
+                        />
+                        <input
+                           name="phone"
+                           id="tel"
+                           type="tel"
+                           class="border shadow-sm rounded-sm w-full placeholder:text-xs placeholder:text-[#6F6F6F] p-1"
+                        />
+                     </div>
+                     <h3
+                        class="text-[#6F6F6F] font-normal text-xs mb-5"
+                        id="tel-place"
+                     >
+                        (Código de área) No. de teléfono
+                     </h3>
+
+                     <label for="want" class="font-bold text-base"
+                        >QUIERO<span class="text-red-600"> *</span></label
+                     >
+                     <select
+                        name="want"
+                        id="want"
+                        class="border shadow-sm rounded-sm w-full text-xs p-2 mb-5"
+                     >
+                        <option value="wants">Aún no tengo Afore</option>
+                        <option value="dont-want">Ya tengo Afore</option>
+                        <option value="dont-know">No sé en que Afore estoy</option>
+                        <option value="want-help">
+                           Quiero que un asesor me contacte
+                        </option>
+                     </select>
+                     <button onclick="sendSubscribeForm('afore-form')"
+                        type="submit"
+                        class="bg-[#CCCCCC] border shadow-sm rounded-sm font-medium text-sm p-1 w-full md:w-[40%] self-center"
+                     >
+                        Enviar
+                     </button>
+                  </form>
+               </div>
+            </div>
+         </section>
+
+         <section id="home-section" class="flex justify-center">
+            <div
+               class="flex sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:[1280px] 2xl:w-[1400px]"
+            ></div>
+         </section>
+      </main>
+      <!--?FOOTER-->
+      <footer
+         class="bg-[#5FA72C] flex flex-col items-center text-justify p-4 gap-3 h-[500px] md:h-[360px] lg:h-[700px]"
+      >
+         <div class="flex flex-col items-center md:w-[85%] lg:w-[80%]">
+            <img
+               src="images/logo.png"
+               class="w-[190px] md:w-[300px] my-5"
+               alt="logo"
+            />
+            <p class="text-white text-sm">
+               El dominio <span class="dyn-domain"></span> es operado por y
+               pertenece a <span class="dyn-name"></span>. Todos los servicios y
+               contenidos proporcionados a través de nuestra plataforma están
+               protegidos por las leyes de derechos de autor aplicables. Si bien
+               ofrecemos asesoría y gestión en la selección y traspaso de Afore,
+               los derechos de propiedad intelectual sobre los materiales
+               informativos y de apoyo son inicialmente propiedad de
+               <span class="dyn-name"></span>. <br />
+               <br />
+               Una vez que el usuario completa el proceso de registro o traspaso
+               de su Afore, la información y los beneficios asociados son
+               exclusivos del cliente, garantizando que el servicio recibido sea
+               único y personalizado. Cualquier uso o reproducción no autorizada
+               del contenido, fuera de lo estipulado en nuestro acuerdo con el
+               cliente, está estrictamente prohibido. <br /><br />
+               Nos comprometemos a ofrecer servicios de la más alta calidad,
+               asegurando que cada asesoría y gestión cumpla con los estándares
+               establecidos. <br /><br />
+               Si tienes alguna duda o necesitas asistencia, no dudes en
+               contactarnos a través de nuestros canales de atención al cliente.
+               <br /><br />
+            </p>
+            <span class="text-center text-white text-sm mb-10">
+               © 2024 Todos los derechos reservados |
+               <span class="dyn-name"></span>
+            </span>
+            <div
+               class="flex flex-col text-white font-bold text-center gap-3 text-sm md:flex-row md:gap-10"
+            >
+               <span class="cursor-pointer" onclick="clickModal('terms-modal')"
+                  >Términos y condiciones</span
+               >
+               <span
+                  class="cursor-pointer"
+                  onclick="clickModal('privacy-modal')"
+                  >Pólitica de privacidad</span
+               >
+               <span class="cursor-pointer" onclick="clickModal('info-modal')"
+                  >Información de la compañia</span
+               >
+            </div>
+         </div>
+      </footer>
+
+      <!-- ! Modals -->
+      <!-- ? Terms and Conditions Modal -->
+      <section
+      id="terms-modal"
+      class="bg-[#00000088] font-Montserrat flex items-center justify-center min-h-screen absolute z-50 hidden"
+   >
+      <div
+         class="fixed inset-0 w-full bg-[#00000088] flex items-center justify-center max-h-screen"
+      >
+         <div
+            class="bg-white shadow-lg w-11/12 sm:w-8/12 lg:max-w-[600px] h-auto max-h-[70vh] rounded-md overflow-y-auto"
+         >
+            <div class="relative flex items-end">
+               <img
+                  class="hover:cursor-pointer absolute top-0 right-0 w-7 m-4 rounded-xs"
+                  onclick="clickModal('terms-modal')"
+                  src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSIjRUZFRkVGIiBkPSJNMTkgM0g1YTIgMiAwIDAgMC0yIDJ2MTRhMiAyIDAgMCAwIDIgMmgxNGEyIDIgMCAwIDAgMi0yVjVhMiAyIDAgMCAwLTItMm0tMy40IDE0TDEyIDEzLjRMOC40IDE3TDcgMTUuNmwzLjYtMy42TDcgOC40TDguNCA3bDMuNiAzLjZMMTUuNiA3TDE3IDguNEwxMy40IDEybDMuNiAzLjZ6Ii8+PC9zdmc+"
+                  alt=""
+               />
+               <div
+                  class="bg-primarybg w-full flex flex-col items-center gap-6 p-5"
+               >
+                  <h2 class="font-bold text-3xl text-center">
+                     <span class="text-[#5FA72C]">TÉRMINOS </span>
+                   Y CONDICIONES
+                  </h2>
+
+                  <div class="flex flex-col items-center">
+                     <h3 class="font-bold">Introducción</h3>
+                     <p
+                        class="text-[#6C6C6C] text-base text-center w-[60%] mb-5"
+                     >
+                     Bienvenido a <span class="dyn-name"></span>. Al acceder y utilizar nuestros servicios, aceptas estos
+                     Términos y Condiciones de Uso. Si no estás de acuerdo con alguno de estos términos, no
+                     deberías utilizar nuestros servicios.
+                     </p>
+                     <h3 class="font-bold">Uso de los Servicios</h3>
+                     <p
+                        class="text-[#6C6C6C] text-base text-center w-[60%] mb-5"
+                     >
+                     Nuestros servicios están diseñados para conectar a los usuarios con las mejores opciones
+                     de Afore en el mercado, proporcionando información detallada y actualizada para facilitar la
+                     toma de decisiones informadas. Te comprometes a utilizar nuestros servicios de manera
+                     responsable y conforme a la ley, respetando las normativas financieras y legales aplicables.
+                     </p>
+                     <h3 class="font-bold">Propiedad Intelectual</h3>
+                     <p
+                        class="text-[#6C6C6C] text-base text-center w-[60%] mb-5"
+                     >
+                     Todos los contenidos y materiales disponibles en nuestros servicios, incluyendo textos,
+                     gráficos, logotipos e imágenes, son propiedad de <span class="dyn-name"></span> o sus licenciantes
+                     y están protegidos por las leyes de propiedad intelectual. No puedes utilizar, reproducir ni
+                     distribuir ningún material sin nuestro permiso expreso.
+                     </p>
+                     <h3 class="font-bold">Modificaciones</h3>
+                     <p
+                        class="text-[#6C6C6C] text-base text-center w-[60%] mb-5"
+                     >
+                     Nos reservamos el derecho de modificar estos Términos y Condiciones de Uso en cualquier
+                     momento. Las modificaciones serán efectivas una vez publicadas en nuestro sitio web. Es
+                     tu responsabilidad revisar estos términos periódicamente para estar informado de cualquier
+                     cambio.
+                     </p>
+                     <h3 class="font-bold">Limitación de Responsabilidad</h3>
+                     <p
+                        class="text-[#6C6C6C] text-base text-center w-[60%] mb-5"
+                     >
+                     <span class="dyn-name"></span> no será responsable por cualquier daño directo, indirecto, incidental,
+                     especial o consecuente que resulte del uso o la imposibilidad de uso de nuestros servicios.
+                     No garantizamos la exactitud, integridad o actualidad de la información proporcionada.
+                     </p>
+                     <h3 class="font-bold">Contacto</h3>
+                     <p
+                        class="text-[#6C6C6C] text-base text-center w-[60%] mb-5"
+                     >
+                     Si tienes alguna pregunta sobre estos Términos y Condiciones de Uso, por favor
+                     contáctanos a través del formulario en la página.
+                     </p>
+                  </div>
+               </div>
+            </div>
+
+            <article
+               class="overflow-y-auto overflow-x-hidden h-96 p-5 text-xs flex flex-col gap-4"
+            ></article>
+         </div>
+      </div>
+   </section>
+  
+
+      <!-- ? Privacy Policy Modal -->
+      <section
+         id="privacy-modal"
+         class="bg-[#00000088] font-Montserrat flex items-center justify-center min-h-screen absolute z-50 hidden"
+      >
+         <div
+            class="fixed inset-0 w-full bg-[#00000088] flex items-center justify-center max-h-screen"
+         >
+            <div
+               class="bg-white shadow-lg w-11/12 sm:w-8/12 lg:max-w-[600px] h-auto max-h-[70vh] rounded-md overflow-y-auto"
+            >
+               <div class="relative flex items-end">
+                  <img
+                     class="hover:cursor-pointer absolute top-0 right-0 w-7 m-4 rounded-xs"
+                     onclick="clickModal('privacy-modal')"
+                     src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSIjRUZFRkVGIiBkPSJNMTkgM0g1YTIgMiAwIDAgMC0yIDJ2MTRhMiAyIDAgMCAwIDIgMmgxNGEyIDIgMCAwIDAgMi0yVjVhMiAyIDAgMCAwLTItMm0tMy40IDE0TDEyIDEzLjRMOC40IDE3TDcgMTUuNmwzLjYtMy42TDcgOC40TDguNCA3bDMuNiAzLjZMMTUuNiA3TDE3IDguNEwxMy40IDEybDMuNiAzLjZ6Ii8+PC9zdmc+"
+                     alt=""
+                  />
+                  <div
+                     class="bg-primarybg w-full flex flex-col items-center gap-6 p-5"
+                  >
+                     <h2 class="font-bold text-3xl text-center">
+                        <span class="text-[#5FA72C]">POLITICA DE </span>
+                        PRIVACIDAD
+                     </h2>
+
+                     <div class="flex flex-col items-center">
+                        <h3 class="font-bold">Política de Privacidad</h3>
+                        <p
+                           class="text-[#6C6C6C] text-base text-center w-[60%] mb-5"
+                        >
+                           <span class="font-bold dyn-name"></span>, así como su
+                           dominio <span class="font-bold dyn-domain"></span>,
+                           son propiedad intelectual de
+                           <span class="font-bold dyn-name"></span>, en lo
+                           sucesivo denominado como “la agencia”. En la agencia
+                           respetamos tu privacidad y nos comprometemos a
+                           proteger la información personal que compartes con
+                           nosotros. Esta Política de Privacidad describe cómo
+                           recopilamos, usamos y protegemos tu información.
+                        </p>
+                        <h3 class="font-bold">Recopilación de Información</h3>
+                        <p
+                           class="text-[#6C6C6C] text-base text-center w-[60%] mb-5"
+                        >
+                           En la agencia recopilamos información personal que
+                           nos proporcionas directamente, como nombre, correo
+                           electrónico y número de teléfono, cuando te comunicas
+                           con nosotros, te registras en nuestros servicios o
+                           participas en nuestras promociones. También podemos
+                           recopilar información de manera automática, como
+                           datos de navegación y cookies.
+                        </p>
+                        <h3 class="font-bold">Uso de la Información</h3>
+                        <p
+                           class="text-[#6C6C6C] text-base text-center w-[60%] mb-5"
+                        >
+                           ● Proveer y mejorar nuestros servicios. <br />
+                           ● Responder a tus consultas y brindarte soporte.
+                           <br />
+                           ● Enviar información relevante sobre nuestros
+                           servicios y promociones. <br />
+                           ● Cumplir con obligaciones legales y regulatorias.
+                           <br />
+                        </p>
+                        <h3 class="font-bold">Protección de la Información</h3>
+                        <p
+                           class="text-[#6C6C6C] text-base text-center w-[60%] mb-5"
+                        >
+                           Comprometidos con la seguridad de tu información, en
+                           la agencia adoptamos medidas de seguridad técnicas y
+                           organizativas para proteger tu información contra el
+                           acceso no autorizado, alteración, divulgación o
+                           destrucción.
+                        </p>
+                        <h3 class="font-bold">Compartir Información</h3>
+                        <p
+                           class="text-[#6C6C6C] text-base text-center w-[60%] mb-5"
+                        >
+                           En la agencia no compartimos tu información personal
+                           con terceros, salvo que sea necesario para
+                           proporcionarte nuestros servicios o si lo exige la
+                           ley. En tales casos, nos aseguramos de que estos
+                           terceros ofrezcan el mismo nivel de protección a tu
+                           información.
+                        </p>
+                        <h3 class="font-bold">Tus Derechos</h3>
+                        <p
+                           class="text-[#6C6C6C] text-base text-center w-[60%] mb-5"
+                        >
+                           Tienes derecho a acceder, corregir o eliminar la
+                           información personal proporcionada a la agencia a
+                           través de este sitio web. Para ejercer estos
+                           derechos, por favor contáctanos a través del
+                           formulario alojado en este dominio.
+                        </p>
+                     </div>
+                  </div>
+               </div>
+
+               <article
+                  class="overflow-y-auto overflow-x-hidden h-96 p-5 text-xs flex flex-col gap-4"
+               ></article>
+            </div>
+         </div>
+      </section>
+
+      <!-- ? Info Modal -->
+      <section
+         id="info-modal"
+         class="bg-[#00000088] font-Montserrat flex items-center justify-center min-h-screen absolute z-50 hidden"
+      >
+         <div
+            class="fixed inset-0 w-full bg-[#00000088] flex items-center justify-center max-h-screen"
+         >
+            <div
+               class="bg-white shadow-lg w-11/12 sm:w-8/12 lg:max-w-[600px] h-auto max-h-[70vh] rounded-md overflow-y-auto"
+            >
+               <div class="relative flex items-end">
+                  <img
+                     class="hover:cursor-pointer absolute top-0 right-0 w-7 m-4 rounded-xs"
+                     onclick="clickModal('info-modal')"
+                     src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSIjRUZFRkVGIiBkPSJNMTkgM0g1YTIgMiAwIDAgMC0yIDJ2MTRhMiAyIDAgMCAwIDIgMmgxNGEyIDIgMCAwIDAgMi0yVjVhMiAyIDAgMCAwLTItMm0tMy40IDE0TDEyIDEzLjRMOC40IDE3TDcgMTUuNmwzLjYtMy42TDcgOC40TDguNCA3bDMuNiAzLjZMMTUuNiA3TDE3IDguNEwxMy40IDEybDMuNiAzLjZ6Ii8+PC9zdmc+"
+                     alt=""
+                  />
+                  <div
+                     class="bg-primarybg w-full flex flex-col items-center gap-6 p-5"
+                  >
+                     <h2 class="font-bold text-3xl text-center">
+                        NOSOTROS</span>
+                     </h2>
+
+                     <div class="flex flex-col items-center">
+                        
+                        <p
+                           class="text-[#6C6C6C] text-base text-center w-[60%] mb-5"
+                        >
+                        <span class="font-bold dyn-name"></span> es operado por una agencia de publicidad dedicada a promover y
+                        conectar a los usuarios con las mejores opciones de Afore en México. Nuestra misión es
+                        generar leads de calidad que permitan a nuestros clientes tomar decisiones informadas
+                        sobre sus ahorros y planes de retiro. <br> <br>
+
+                        Trabajamos estrechamente con instituciones financieras, asesores de Afore y expertos del
+                        sector para asegurar que nuestros usuarios reciban la información más precisa y
+                        actualizada. Utilizamos tecnología avanzada y estrategias de marketing efectivas para
+                        alcanzar a nuestro público objetivo y proporcionar una experiencia de usuario óptima. <br> <br> Nos comprometemos a ofrecer una plataforma confiable y accesible, adaptada a las
+                        necesidades de nuestros clientes, garantizando transparencia, seguridad y soporte
+                        continuo. Tu futuro financiero es nuestra prioridad, y estamos aquí para ayudarte a
+                        asegurarlo.
+
+                        </p>
+                        
+                     </div>
+                  </div>
+               </div>
+
+               <article
+                  class="overflow-y-auto overflow-x-hidden h-96 p-5 text-xs flex flex-col gap-4"
+               ></article>
+            </div>
+         </div>
+      </section>
+
+      <!-- ? Cookies Modal -->
+      <section
+         id="cookies-modal"
+         class="bg-[#00000088] font-[Inter] flex items-center justify-center min-h-screen absolute z-50 hidden"
+      >
+         <div
+            class="fixed inset-0 w-full bg-[#00000088] flex items-center justify-center max-h-screen"
+         >
+            <div
+               class="bg-white shadow-lg w-11/12 sm:w-8/12 lg:max-w-[600px] h-auto max-h-54 rounded-md"
+            >
+               <div class="relative flex items-end">
+                  <img
+                     class="hover:cursor-pointer absolute top-0 right-0 w-7 m-4 rounded-xs"
+                     onclick="clickModal('cookies-modal')"
+                     src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSIjRUZFRkVGIiBkPSJNMTkgM0g1YTIgMiAwIDAgMC0yIDJ2MTRhMiAyIDAgMCAwIDIgMmgxNGEyIDIgMCAwIDAgMi0yVjVhMiAyIDAgMCAwLTItMm0tMy40IDE0TDEyIDEzLjRMOC40IDE3TDcgMTUuNmwzLjYtMy42TDcgOC40TDguNCA3bDMuNiAzLjZMMTUuNiA3TDE3IDguNEwxMy40IDEybDMuNiAzLjZ6Ii8+PC9zdmc+"
+                     alt=""
+                  />
+                  <div class="bg-primarybg w-full">
+                     <h2
+                        class="text-base text-center p-4 font-bold text-white w-full"
+                     >
+                        Cookie Policy
+                     </h2>
+                  </div>
+               </div>
+
+               <article
+                  class="overflow-y-auto overflow-x-hidden h-96 p-5 text-xs flex flex-col gap-4"
+               ></article>
+            </div>
+         </div>
+      </section>
+
+      <!-- ? Contact Modal -->
+      <section
+         id="contact-modal"
+         class="bg-[#00000088] font-[Inter] flex items-center justify-center min-h-screen absolute z-50 hidden"
+      >
+         <div
+            class="fixed inset-0 w-full bg-[#00000088] flex items-center justify-center max-h-screen"
+         >
+            <div
+               class="bg-white shadow-lg w-11/12 sm:w-8/12 lg:max-w-[600px] h-auto max-h-54 rounded-md"
+            >
+               <div class="relative flex items-end">
+                  <img
+                     class="hover:cursor-pointer absolute top-0 right-0 w-7 m-4 rounded-xs"
+                     onclick="clickModal('contact-modal')"
+                     src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSIjRUZFRkVGIiBkPSJNMTkgM0g1YTIgMiAwIDAgMC0yIDJ2MTRhMiAyIDAgMCAwIDIgMmgxNGEyIDIgMCAwIDAgMi0yVjVhMiAyIDAgMCAwLTItMm0tMy40IDE0TDEyIDEzLjRMOC40IDE3TDcgMTUuNmwzLjYtMy42TDcgOC40TDguNCA3bDMuNiAzLjZMMTUuNiA3TDE3IDguNEwxMy40IDEybDMuNiAzLjZ6Ii8+PC9zdmc+"
+                     alt=""
+                  />
+                  <div class="bg-primarybg w-full">
+                     <h2
+                        class="text-base text-center p-4 font-bold text-white w-full"
+                     >
+                        Contact
+                     </h2>
+                  </div>
+               </div>
+
+               <article
+                  class="overflow-y-auto overflow-x-hidden h-96 p-5 text-xs flex flex-col gap-4"
+               ></article>
+            </div>
+         </div>
+      </section>
+   </body>
+</html>
